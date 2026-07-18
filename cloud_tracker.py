@@ -7,7 +7,7 @@ from datetime import datetime
 TARGET_REPOS = [
     "doitsujin/dxvk",
     "Ph42oN/dxvk-gplasync",
-    "doitsujin/dxvk-spirv",       # placeholder name — swap in the actual dxbc-spirv repo path you track
+    "isygold/vegas-releases",       # placeholder name — swap in the actual dxbc-spirv repo path you track
     "HansKristian-Work/vkd3d-proton",
 ]
 
