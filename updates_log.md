@@ -1,0 +1,17 @@
+# Emulation Dependency Updates Log
+
+- **doitsujin/dxvk** | Tag: `v2.7` | *2025-07-05 14:23:40* | [View Release](https://github.com/doitsujin/dxvk/releases/tag/v2.7)
+- **doitsujin/dxvk** | Tag: `v2.7.1` | *2025-08-30 10:23:06* | [View Release](https://github.com/doitsujin/dxvk/releases/tag/v2.7.1)
+- **doitsujin/dxvk** | Tag: `v3.0` | *2026-06-25 20:02:30* | [View Release](https://github.com/doitsujin/dxvk/releases/tag/v3.0)
+- **doitsujin/dxvk** | Tag: `v3.0.1` | *2026-07-05 18:28:19* | [View Release](https://github.com/doitsujin/dxvk/releases/tag/v3.0.1)
+- **doitsujin/dxvk** | Tag: `v3.0.2` | *2026-07-17 22:38:22* | [View Release](https://github.com/doitsujin/dxvk/releases/tag/v3.0.2)
+- **isygold/vegas-releases** | Tag: `v2.7.3-vegas` | *2026-06-06 14:43:42* | [View Release](https://github.com/isygold/vegas-releases/releases/tag/v2.7.3-vegas)
+- **isygold/vegas-releases** | Tag: `v2.7.3-vegas-stable` | *2026-06-08 09:20:07* | [View Release](https://github.com/isygold/vegas-releases/releases/tag/v2.7.3-vegas-stable)
+- **isygold/vegas-releases** | Tag: `v1.11.1-vegas-sarek` | *2026-07-10 03:06:31* | [View Release](https://github.com/isygold/vegas-releases/releases/tag/v1.11.1-vegas-sarek)
+- **isygold/vegas-releases** | Tag: `v1.11.2-3299d2a` | *2026-07-12 21:29:55* | [View Release](https://github.com/isygold/vegas-releases/releases/tag/v1.11.2-3299d2a)
+- **HansKristian-Work/vkd3d-proton** | Tag: `v2.14.1` | *2025-01-10 13:55:32* | [View Release](https://github.com/HansKristian-Work/vkd3d-proton/releases/tag/v2.14.1)
+- **HansKristian-Work/vkd3d-proton** | Tag: `v3.0` | *2025-11-17 15:54:20* | [View Release](https://github.com/HansKristian-Work/vkd3d-proton/releases/tag/v3.0)
+- **HansKristian-Work/vkd3d-proton** | Tag: `v3.0a` | *2025-11-18 16:58:49* | [View Release](https://github.com/HansKristian-Work/vkd3d-proton/releases/tag/v3.0a)
+- **HansKristian-Work/vkd3d-proton** | Tag: `v3.0b` | *2025-12-10 09:49:00* | [View Release](https://github.com/HansKristian-Work/vkd3d-proton/releases/tag/v3.0b)
+- **HansKristian-Work/vkd3d-proton** | Tag: `v3.0.1` | *2026-05-06 11:35:27* | [View Release](https://github.com/HansKristian-Work/vkd3d-proton/releases/tag/v3.0.1)
+
