@@ -5,6 +5,9 @@ on:
     - cron: '0 */3 * * *' # Runs every 3 hours
   workflow_dispatch: # Allows manual trigger via GitHub UI
 
+permissions:
+  contents: write
+
 jobs:
   track:
     runs-on: ubuntu-latest
