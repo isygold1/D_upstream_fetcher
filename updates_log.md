@@ -1,5 +1,11 @@
 # Emulation Dependency Updates Log
 
+- **Ph42oN/dxvk-gplasync** (GitLab) | Tag: `v2.6.1-1` | *2025-04-28 13:33:00.000* | [View Release](https://gitlab.com/Ph42oN/dxvk-gplasync/-/releases/v2.6.1-1)
+- **Ph42oN/dxvk-gplasync** (GitLab) | Tag: `v2.6.2-1` | *2025-06-27 12:13:28.000* | [View Release](https://gitlab.com/Ph42oN/dxvk-gplasync/-/releases/v2.6.2-1)
+- **Ph42oN/dxvk-gplasync** (GitLab) | Tag: `v2.7-1` | *2025-07-13 09:47:35.000* | [View Release](https://gitlab.com/Ph42oN/dxvk-gplasync/-/releases/v2.7-1)
+- **Ph42oN/dxvk-gplasync** (GitLab) | Tag: `v2.7.1-1` | *2025-09-17 08:42:16.000* | [View Release](https://gitlab.com/Ph42oN/dxvk-gplasync/-/releases/v2.7.1-1)
+- **Ph42oN/dxvk-gplasync** (GitLab) | Tag: `v3.0-1` | *2026-06-28 08:20:04.000* | [View Release](https://gitlab.com/Ph42oN/dxvk-gplasync/-/releases/v3.0-1)
+
 - **doitsujin/dxvk** | Tag: `v2.7` | *2025-07-05 14:23:40* | [View Release](https://github.com/doitsujin/dxvk/releases/tag/v2.7)
 - **doitsujin/dxvk** | Tag: `v2.7.1` | *2025-08-30 10:23:06* | [View Release](https://github.com/doitsujin/dxvk/releases/tag/v2.7.1)
 - **doitsujin/dxvk** | Tag: `v3.0` | *2026-06-25 20:02:30* | [View Release](https://github.com/doitsujin/dxvk/releases/tag/v3.0)
