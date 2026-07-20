@@ -44,7 +44,7 @@ def save_state(state):
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 
 
-def format_notes(body, max_len=500):
+def format_notes(body, max_len=200):
     """Reformat release notes for Telegram while PRESERVING structure —
     headers, bullets, and line breaks stay intact instead of being flattened
     into one paragraph. This is the source of truth; never edited for tone."""
@@ -252,9 +252,11 @@ def process_repo(repo, releases, state, new_entries, repo_updates, platform_labe
 def build_digest(repo_updates):
     """One clean, grouped message per run instead of one message per release.
     Older backlog tags are shown as compact bullets; only the newest release
-    per repo gets its changelog snippet expanded."""
+    per repo gets its TL;DR + a trimmed raw-notes excerpt for spot-checking
+    exact technical details."""
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M")
-    sections = [f"📦 Dependency Tracker — {timestamp}"]
+    divider = "─" * 24
+    sections = [f"📦 *Dependency Tracker*\n{timestamp}", divider]
 
     for group in repo_updates:
         repo = group["repo"]
@@ -263,24 +265,26 @@ def build_digest(repo_updates):
         latest = releases[-1]
         backlog = releases[:-1]
 
-        lines = [f"\n🔹 {repo} ({platform})"]
+        lines = [f"🔹 *{repo}*  ·  {platform}"]
         if backlog:
-            tags = ", ".join(r["tag"] for r in backlog)
-            lines.append(f"   catching up: {tags}")
-
-        lines.append(f"   → {latest['tag']}")
-        notes = format_notes(latest.get("body"))
-        for note_line in notes.splitlines():
-            lines.append(f"     {note_line}")
+            lines.append(f"   ⏫ caught up: {backlog[0]['tag']} → {backlog[-1]['tag']} ({len(backlog)} versions)")
+        lines.append(f"   ✅ latest: `{latest['tag']}`")
 
         takeaway = llm_takeaway(repo, latest.get("title"), latest["tag"], latest.get("body"))
         if takeaway:
-            lines.append(f"   📝 TL;DR: {takeaway}")
+            lines.append(f"   📝 {takeaway}")
 
-        lines.append(f"   {latest['url']}")
+        notes = format_notes(latest.get("body"))
+        if notes and notes != "_(no release notes provided)_":
+            lines.append("   📄 excerpt:")
+            for note_line in notes.splitlines():
+                lines.append(f"      {note_line}")
+
+        lines.append(f"   🔗 {latest['url']}")
         sections.append("\n".join(lines))
+        sections.append(divider)
 
-    return "\n".join(sections)
+    return "\n".join(sections[:-1])  # drop trailing divider
 
 
 def run_tracker():
