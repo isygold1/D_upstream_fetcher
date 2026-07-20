@@ -93,9 +93,10 @@ def llm_takeaway(repo, title, tag, body):
                     "role": "user",
                     "content": (
                         f"Release notes for {repo} {tag} ({title}):\n\n{body[:1500]}\n\n"
-                        "In exactly one short sentence, plain language, no markdown: "
-                        "what does this update mean in practice? Only state what the "
-                        "notes actually say — do not infer or add anything not present."
+                        "Write a one-line TL;DR the way a developer would jot in a changelog "
+                        "summary — terse, technical, no marketing tone, no markdown. "
+                        "Only state what the notes actually say — do not infer or add "
+                        "anything not present."
                     ),
                 }],
             },
@@ -272,7 +273,7 @@ def build_digest(repo_updates):
 
         takeaway = llm_takeaway(repo, latest.get("title"), latest["tag"], latest.get("body"))
         if takeaway:
-            lines.append(f"   💡 AI summary: {takeaway}")
+            lines.append(f"   📝 TL;DR: {takeaway}")
 
         lines.append(f"   {latest['url']}")
         sections.append("\n".join(lines))
