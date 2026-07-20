@@ -1,5 +1,6 @@
 import os
 import json
+import time
 import requests
 from datetime import datetime
 
@@ -74,13 +75,25 @@ def prepend_log(new_entries):
         f.write("\n" + old_content)
 
 
-def fetch_github_releases(repo):
-    """Returns a list of normalized release dicts, newest first, or None on failure."""
+def fetch_github_releases(repo, retries=2):
+    """Returns a list of normalized release dicts, newest first, or None on failure.
+    Retries once on 5xx since GitHub's API occasionally throws transient 502/503s."""
     headers = {"Accept": "application/vnd.github.v3+json"}
     if GH_TOKEN:
         headers["Authorization"] = f"token {GH_TOKEN}"
     url = f"https://api.github.com/repos/{repo}/releases"
-    resp = requests.get(url, headers=headers, timeout=15)
+
+    resp = None
+    for attempt in range(retries + 1):
+        resp = requests.get(url, headers=headers, timeout=15)
+        if resp.status_code == 200:
+            break
+        if resp.status_code >= 500 and attempt < retries:
+            print(f" - {repo} (GitHub) HTTP {resp.status_code}, retrying...")
+            time.sleep(2)
+            continue
+        break
+
     if resp.status_code != 200:
         print(f" - Failed to fetch {repo} (GitHub): HTTP {resp.status_code}")
         return None
