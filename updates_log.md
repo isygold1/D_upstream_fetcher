@@ -1,5 +1,11 @@
 # Emulation Dependency Updates Log
 
+- **The412Banner/Bannerlator** (GitHub) | Tag: `2.5.2` | *2026-07-10 22:53:27* | [View Release](https://github.com/The412Banner/Bannerlator/releases/tag/2.5.2)
+- **The412Banner/Bannerlator** (GitHub) | Tag: `2.6` | *2026-07-11 23:39:27* | [View Release](https://github.com/The412Banner/Bannerlator/releases/tag/2.6)
+- **The412Banner/Bannerlator** (GitHub) | Tag: `2.6.1` | *2026-07-13 11:00:44* | [View Release](https://github.com/The412Banner/Bannerlator/releases/tag/2.6.1)
+- **The412Banner/Bannerlator** (GitHub) | Tag: `2.6.2` | *2026-07-17 03:00:36* | [View Release](https://github.com/The412Banner/Bannerlator/releases/tag/2.6.2)
+- **The412Banner/Bannerlator** (GitHub) | Tag: `2.7` | *2026-07-20 13:09:22* | [View Release](https://github.com/The412Banner/Bannerlator/releases/tag/2.7)
+
 - **Digger1955/dxvk-gplall** (GitHub) | Tag: `DXVK-GPLALL-2.7.1-2` | *2026-01-30 07:15:21* | [View Release](https://github.com/Digger1955/dxvk-gplall/releases/tag/DXVK-GPLALL-2.7.1-2)
 - **Digger1955/dxvk-gplall** (GitHub) | Tag: `DXVK-GPLALL-2.6.6-1` | *2026-04-16 09:46:10* | [View Release](https://github.com/Digger1955/dxvk-gplall/releases/tag/DXVK-GPLALL-2.6.6-1)
 - **Digger1955/dxvk-gplall** (GitHub) | Tag: `DXVK-GPLALL-2.7.1-3` | *2026-04-30 11:30:41* | [View Release](https://github.com/Digger1955/dxvk-gplall/releases/tag/DXVK-GPLALL-2.7.1-3)
