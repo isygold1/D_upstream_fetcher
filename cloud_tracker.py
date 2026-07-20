@@ -41,7 +41,7 @@ def save_state(state):
         json.dump(state, f, indent=2)
 
 
-ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY")
+GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 
 
 def format_notes(body, max_len=500):
@@ -73,22 +73,21 @@ def format_notes(body, max_len=500):
 
 
 def llm_takeaway(repo, title, tag, body):
-    """Ask Claude for a short 'what this means' line, clearly separate from
-    the raw notes above so nothing here is ever mistaken for the actual
-    changelog. Returns None if no API key is set or the call fails —
-    the digest still works fine without this."""
-    if not ANTHROPIC_API_KEY or not body:
+    """Ask a Groq-hosted model for a short 'what this means' line, clearly
+    separate from the raw notes above so nothing here is ever mistaken for
+    the actual changelog. Returns None if no API key is set or the call
+    fails — the digest still works fine without this."""
+    if not GROQ_API_KEY or not body:
         return None
     try:
         resp = requests.post(
-            "https://api.anthropic.com/v1/messages",
+            "https://api.groq.com/openai/v1/chat/completions",
             headers={
-                "x-api-key": ANTHROPIC_API_KEY,
-                "anthropic-version": "2023-06-01",
-                "content-type": "application/json",
+                "Authorization": f"Bearer {GROQ_API_KEY}",
+                "Content-Type": "application/json",
             },
             json={
-                "model": "claude-sonnet-4-6",
+                "model": "llama-3.3-70b-versatile",
                 "max_tokens": 100,
                 "messages": [{
                     "role": "user",
@@ -103,12 +102,10 @@ def llm_takeaway(repo, title, tag, body):
             timeout=20,
         )
         if resp.status_code != 200:
-            print(f" - LLM summary failed for {repo}: HTTP {resp.status_code}")
+            print(f" - LLM summary failed for {repo}: HTTP {resp.status_code} {resp.text[:200]}")
             return None
         data = resp.json()
-        for block in data.get("content", []):
-            if block.get("type") == "text":
-                return block["text"].strip()
+        return data["choices"][0]["message"]["content"].strip()
     except Exception as e:
         print(f" - LLM summary error for {repo}: {e}")
     return None
