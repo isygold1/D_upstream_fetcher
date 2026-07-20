@@ -46,8 +46,9 @@ def summarize_body(body, max_len=280):
     if not body:
         return "_(no release notes provided)_"
     text = body.strip()
-    # Strip common markdown noise that reads badly in Telegram
-    for token in ["### ", "## ", "# ", "**", "* ", "- ", "`"]:
+    # Strip markdown/formatting characters that break Telegram's parser
+    # or just add visual noise when flattened to one line.
+    for token in ["### ", "## ", "# ", "**", "__", "* ", "- ", "`", "_", "[", "]", "(", ")"]:
         text = text.replace(token, "")
     # Collapse excess blank lines
     lines = [l.strip() for l in text.splitlines() if l.strip()]
@@ -62,6 +63,10 @@ def send_telegram(message):
         print("Telegram not configured — skipping notification.")
         return
     url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
+
+    # Try Markdown first for nicer formatting; release notes often contain
+    # stray _ * [ ` characters that break Telegram's parser, so fall back
+    # to plain text rather than silently dropping the notification.
     payload = {
         "chat_id": TELEGRAM_CHAT_ID,
         "text": message,
@@ -70,6 +75,13 @@ def send_telegram(message):
     }
     try:
         resp = requests.post(url, json=payload, timeout=15)
+        if resp.status_code == 400:
+            plain_payload = {
+                "chat_id": TELEGRAM_CHAT_ID,
+                "text": message,
+                "disable_web_page_preview": True,
+            }
+            resp = requests.post(url, json=plain_payload, timeout=15)
         if resp.status_code != 200:
             print(f"Telegram send failed: {resp.status_code} {resp.text}")
     except Exception as e:
