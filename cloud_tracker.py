@@ -7,8 +7,6 @@ from datetime import datetime
 # GitHub-hosted repos (uses GitHub Releases API)
 GITHUB_REPOS = [
     "doitsujin/dxvk",
-    "isygold/vegas-releases",       # placeholder — swap in the actual dxbc-spirv repo path you track
-    "HansKristian-Work/vkd3d-proton",
     "The412Banner/Bannerlator",
 ]
 
