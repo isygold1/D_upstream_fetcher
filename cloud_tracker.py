@@ -9,6 +9,10 @@ GITHUB_REPOS = [
     "doitsujin/dxvk",
     "isygold/vegas-releases",
     "The412Banner/Bannerlator",
+    "Digger1955/dxvk-gplall",           # Async + Low Latency + GPL combo fork
+    "netborg-afps/dxvk-low-latency",    # Frame pacing / low-latency fork
+    "NVIDIAGameWorks/dxvk-remix",       # RTX Remix fork
+    "pythonlover02/DXVK-Sarek",         # Mali/mobile-adjacent fork
 ]
 
 # GitLab-hosted repos (uses GitLab Releases API — different platform, different endpoint)
