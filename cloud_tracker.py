@@ -7,6 +7,7 @@ from datetime import datetime
 # GitHub-hosted repos (uses GitHub Releases API)
 GITHUB_REPOS = [
     "doitsujin/dxvk",
+    "isygold/vegas-releases",
     "The412Banner/Bannerlator",
 ]
 
