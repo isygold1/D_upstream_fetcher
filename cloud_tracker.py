@@ -9,6 +9,7 @@ TARGET_REPOS = [
     "Ph42oN/dxvk-gplasync",
     "isygold/vegas-releases",       # placeholder name — swap in the actual dxbc-spirv repo path you track
     "HansKristian-Work/vkd3d-proton",
+    "The412Banner/Bannerlator",
 ]
 
 LOG_FILE = "updates_log.md"
