@@ -1,5 +1,11 @@
 # Emulation Dependency Updates Log
 
+- **The412Banner/Bannerlator** (GitHub) | Tag: `2.5.2` | *2026-07-10 22:53:27* | [View Release](https://github.com/The412Banner/Bannerlator/releases/tag/2.5.2)
+- **The412Banner/Bannerlator** (GitHub) | Tag: `2.6` | *2026-07-11 23:39:27* | [View Release](https://github.com/The412Banner/Bannerlator/releases/tag/2.6)
+- **The412Banner/Bannerlator** (GitHub) | Tag: `2.6.1` | *2026-07-13 11:00:44* | [View Release](https://github.com/The412Banner/Bannerlator/releases/tag/2.6.1)
+- **The412Banner/Bannerlator** (GitHub) | Tag: `2.6.2` | *2026-07-17 03:00:36* | [View Release](https://github.com/The412Banner/Bannerlator/releases/tag/2.6.2)
+- **The412Banner/Bannerlator** (GitHub) | Tag: `mali-compat-test1` | *2026-07-18 03:53:06* | [View Release](https://github.com/The412Banner/Bannerlator/releases/tag/mali-compat-test1)
+
 - **Ph42oN/dxvk-gplasync** (GitLab) | Tag: `v2.6.1-1` | *2025-04-28 13:33:00.000* | [View Release](https://gitlab.com/Ph42oN/dxvk-gplasync/-/releases/v2.6.1-1)
 - **Ph42oN/dxvk-gplasync** (GitLab) | Tag: `v2.6.2-1` | *2025-06-27 12:13:28.000* | [View Release](https://gitlab.com/Ph42oN/dxvk-gplasync/-/releases/v2.6.2-1)
 - **Ph42oN/dxvk-gplasync** (GitLab) | Tag: `v2.7-1` | *2025-07-13 09:47:35.000* | [View Release](https://gitlab.com/Ph42oN/dxvk-gplasync/-/releases/v2.7-1)
