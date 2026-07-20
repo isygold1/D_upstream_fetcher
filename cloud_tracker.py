@@ -41,21 +41,77 @@ def save_state(state):
         json.dump(state, f, indent=2)
 
 
-def summarize_body(body, max_len=280):
-    """Strip markdown noise and trim release notes to a readable preview length."""
+ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY")
+
+
+def format_notes(body, max_len=500):
+    """Reformat release notes for Telegram while PRESERVING structure —
+    headers, bullets, and line breaks stay intact instead of being flattened
+    into one paragraph. This is the source of truth; never edited for tone."""
     if not body:
         return "_(no release notes provided)_"
-    text = body.strip()
-    # Strip markdown/formatting characters that break Telegram's parser
-    # or just add visual noise when flattened to one line.
-    for token in ["### ", "## ", "# ", "**", "__", "* ", "- ", "`", "_", "[", "]", "(", ")"]:
-        text = text.replace(token, "")
-    # Collapse excess blank lines
-    lines = [l.strip() for l in text.splitlines() if l.strip()]
-    text = " ".join(lines)
+    lines = []
+    for raw_line in body.strip().splitlines():
+        line = raw_line.strip()
+        if not line:
+            continue
+        # Headers -> simple bold-style line
+        if line.startswith("#"):
+            line = "▪ " + line.lstrip("#").strip()
+        # Bullets -> consistent bullet char
+        elif line.startswith(("- ", "* ")):
+            line = "• " + line[2:].strip()
+        # Strip characters that break Telegram Markdown parsing
+        for token in ["**", "__", "`", "_", "[", "]", "(", ")"]:
+            line = line.replace(token, "")
+        lines.append(line)
+
+    text = "\n".join(lines)
     if len(text) > max_len:
-        text = text[:max_len].rsplit(" ", 1)[0] + "…"
+        text = text[:max_len].rsplit("\n", 1)[0] + "\n…"
     return text
+
+
+def llm_takeaway(repo, title, tag, body):
+    """Ask Claude for a short 'what this means' line, clearly separate from
+    the raw notes above so nothing here is ever mistaken for the actual
+    changelog. Returns None if no API key is set or the call fails —
+    the digest still works fine without this."""
+    if not ANTHROPIC_API_KEY or not body:
+        return None
+    try:
+        resp = requests.post(
+            "https://api.anthropic.com/v1/messages",
+            headers={
+                "x-api-key": ANTHROPIC_API_KEY,
+                "anthropic-version": "2023-06-01",
+                "content-type": "application/json",
+            },
+            json={
+                "model": "claude-sonnet-4-6",
+                "max_tokens": 100,
+                "messages": [{
+                    "role": "user",
+                    "content": (
+                        f"Release notes for {repo} {tag} ({title}):\n\n{body[:1500]}\n\n"
+                        "In exactly one short sentence, plain language, no markdown: "
+                        "what does this update mean in practice? Only state what the "
+                        "notes actually say — do not infer or add anything not present."
+                    ),
+                }],
+            },
+            timeout=20,
+        )
+        if resp.status_code != 200:
+            print(f" - LLM summary failed for {repo}: HTTP {resp.status_code}")
+            return None
+        data = resp.json()
+        for block in data.get("content", []):
+            if block.get("type") == "text":
+                return block["text"].strip()
+    except Exception as e:
+        print(f" - LLM summary error for {repo}: {e}")
+    return None
 
 
 def send_telegram(message):
@@ -212,8 +268,15 @@ def build_digest(repo_updates):
             tags = ", ".join(r["tag"] for r in backlog)
             lines.append(f"   catching up: {tags}")
 
-        preview = summarize_body(latest.get("body"))
-        lines.append(f"   → {latest['tag']}: {preview}")
+        lines.append(f"   → {latest['tag']}")
+        notes = format_notes(latest.get("body"))
+        for note_line in notes.splitlines():
+            lines.append(f"     {note_line}")
+
+        takeaway = llm_takeaway(repo, latest.get("title"), latest["tag"], latest.get("body"))
+        if takeaway:
+            lines.append(f"   💡 AI summary: {takeaway}")
+
         lines.append(f"   {latest['url']}")
         sections.append("\n".join(lines))
 
