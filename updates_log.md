@@ -1,5 +1,21 @@
 # Emulation Dependency Updates Log
 
+- **Digger1955/dxvk-gplall** (GitHub) | Tag: `DXVK-GPLALL-2.7.1-2` | *2026-01-30 07:15:21* | [View Release](https://github.com/Digger1955/dxvk-gplall/releases/tag/DXVK-GPLALL-2.7.1-2)
+- **Digger1955/dxvk-gplall** (GitHub) | Tag: `DXVK-GPLALL-2.6.6-1` | *2026-04-16 09:46:10* | [View Release](https://github.com/Digger1955/dxvk-gplall/releases/tag/DXVK-GPLALL-2.6.6-1)
+- **Digger1955/dxvk-gplall** (GitHub) | Tag: `DXVK-GPLALL-2.7.1-3` | *2026-04-30 11:30:41* | [View Release](https://github.com/Digger1955/dxvk-gplall/releases/tag/DXVK-GPLALL-2.7.1-3)
+- **Digger1955/dxvk-gplall** (GitHub) | Tag: `DXVK-GPLALL-2.7.1-4` | *2026-05-22 12:39:31* | [View Release](https://github.com/Digger1955/dxvk-gplall/releases/tag/DXVK-GPLALL-2.7.1-4)
+- **Digger1955/dxvk-gplall** (GitHub) | Tag: `DXVK-GPLALL-2.6.7-1` | *2026-06-14 15:55:10* | [View Release](https://github.com/Digger1955/dxvk-gplall/releases/tag/DXVK-GPLALL-2.6.7-1)
+- **netborg-afps/dxvk-low-latency** (GitHub) | Tag: `low-latency-framepacing-2.7` | *2025-07-07 09:25:34* | [View Release](https://github.com/netborg-afps/dxvk-low-latency/releases/tag/low-latency-framepacing-2.7)
+- **netborg-afps/dxvk-low-latency** (GitHub) | Tag: `low-latency-framepacing-2.7.1` | *2025-09-02 14:43:23* | [View Release](https://github.com/netborg-afps/dxvk-low-latency/releases/tag/low-latency-framepacing-2.7.1)
+- **netborg-afps/dxvk-low-latency** (GitHub) | Tag: `low-latency-framepacing-2.7.1-2` | *2026-01-10 19:52:38* | [View Release](https://github.com/netborg-afps/dxvk-low-latency/releases/tag/low-latency-framepacing-2.7.1-2)
+- **netborg-afps/dxvk-low-latency** (GitHub) | Tag: `low-latency-framepacing-2.7.1-3` | *2026-01-28 16:58:05* | [View Release](https://github.com/netborg-afps/dxvk-low-latency/releases/tag/low-latency-framepacing-2.7.1-3)
+- **netborg-afps/dxvk-low-latency** (GitHub) | Tag: `low-latency-framepacing-2.7.1-3-521` | *2026-04-01 17:02:46* | [View Release](https://github.com/netborg-afps/dxvk-low-latency/releases/tag/low-latency-framepacing-2.7.1-3-521)
+- **pythonlover02/DXVK-Sarek** (GitHub) | Tag: `v1.10.7` | *2025-02-09 21:52:37* | [View Release](https://github.com/pythonlover02/DXVK-Sarek/releases/tag/v1.10.7)
+- **pythonlover02/DXVK-Sarek** (GitHub) | Tag: `v1.10.8` | *2025-03-12 22:39:06* | [View Release](https://github.com/pythonlover02/DXVK-Sarek/releases/tag/v1.10.8)
+- **pythonlover02/DXVK-Sarek** (GitHub) | Tag: `v1.10.9` | *2025-05-17 07:36:11* | [View Release](https://github.com/pythonlover02/DXVK-Sarek/releases/tag/v1.10.9)
+- **pythonlover02/DXVK-Sarek** (GitHub) | Tag: `v1.11.0` | *2025-07-19 22:28:01* | [View Release](https://github.com/pythonlover02/DXVK-Sarek/releases/tag/v1.11.0)
+- **pythonlover02/DXVK-Sarek** (GitHub) | Tag: `v1.12.0` | *2026-04-16 07:55:21* | [View Release](https://github.com/pythonlover02/DXVK-Sarek/releases/tag/v1.12.0)
+
 - **doitsujin/dxvk** (GitHub) | Tag: `v2.7` | *2025-07-05 14:23:40* | [View Release](https://github.com/doitsujin/dxvk/releases/tag/v2.7)
 - **doitsujin/dxvk** (GitHub) | Tag: `v2.7.1` | *2025-08-30 10:23:06* | [View Release](https://github.com/doitsujin/dxvk/releases/tag/v2.7.1)
 - **doitsujin/dxvk** (GitHub) | Tag: `v3.0` | *2026-06-25 20:02:30* | [View Release](https://github.com/doitsujin/dxvk/releases/tag/v3.0)
