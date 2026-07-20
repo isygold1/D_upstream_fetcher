@@ -164,7 +164,7 @@ def fetch_gitlab_releases(repo):
     return normalized
 
 
-def process_repo(repo, releases, state, new_entries, telegram_messages, platform_label):
+def process_repo(repo, releases, state, new_entries, repo_updates, platform_label):
     if not releases:
         return
     last_seen_tag = state.get(repo)
@@ -178,39 +178,76 @@ def process_repo(repo, releases, state, new_entries, telegram_messages, platform
         print(f" - {repo} up to date at {last_seen_tag}")
         return
 
-    for release in reversed(fresh):
+    fresh_chronological = list(reversed(fresh))
+    for release in fresh_chronological:
         entry = f"- **{repo}** ({platform_label}) | Tag: `{release['tag']}` | *{release['published_at']}* | [View Release]({release['url']})\n"
         new_entries.append(entry)
-        preview = summarize_body(release.get("body"))
-        telegram_messages.append(
-            f"🆕 *{repo}* ({platform_label})\n"
-            f"{release['title']} (`{release['tag']}`)\n\n"
-            f"{preview}\n\n"
-            f"{release['url']}"
-        )
         print(f" 🆕 NEW: {repo} {release['tag']}")
 
+    repo_updates.append({
+        "repo": repo,
+        "platform": platform_label,
+        "releases": fresh_chronological,  # oldest to newest; last one is the latest
+    })
+
     state[repo] = releases[0]["tag"]
+
+
+def build_digest(repo_updates):
+    """One clean, grouped message per run instead of one message per release.
+    Older backlog tags are shown as compact bullets; only the newest release
+    per repo gets its changelog snippet expanded."""
+    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M")
+    sections = [f"📦 Dependency Tracker — {timestamp}"]
+
+    for group in repo_updates:
+        repo = group["repo"]
+        platform = group["platform"]
+        releases = group["releases"]
+        latest = releases[-1]
+        backlog = releases[:-1]
+
+        lines = [f"\n🔹 {repo} ({platform})"]
+        if backlog:
+            tags = ", ".join(r["tag"] for r in backlog)
+            lines.append(f"   catching up: {tags}")
+
+        preview = summarize_body(latest.get("body"))
+        lines.append(f"   → {latest['tag']}: {preview}")
+        lines.append(f"   {latest['url']}")
+        sections.append("\n".join(lines))
+
+    return "\n".join(sections)
 
 
 def run_tracker():
     state = load_state()
     new_entries = []
-    telegram_messages = []
+    repo_updates = []
 
     for repo in GITHUB_REPOS:
         releases = fetch_github_releases(repo)
-        process_repo(repo, releases, state, new_entries, telegram_messages, "GitHub")
+        process_repo(repo, releases, state, new_entries, repo_updates, "GitHub")
 
     for repo in GITLAB_REPOS:
         releases = fetch_gitlab_releases(repo)
-        process_repo(repo, releases, state, new_entries, telegram_messages, "GitLab")
+        process_repo(repo, releases, state, new_entries, repo_updates, "GitLab")
 
     if new_entries:
         prepend_log(new_entries)
         save_state(state)
-        for msg in telegram_messages:
-            send_telegram(msg)
+
+        digest = build_digest(repo_updates)
+        if len(digest) > 3900:
+            # Telegram's hard cap is 4096 chars — split one section per message
+            # rather than truncating and losing repos off the bottom.
+            header = digest.split("\n", 1)[0]
+            for group in repo_updates:
+                chunk = build_digest([group]).replace(header, header, 1)
+                send_telegram(chunk)
+        else:
+            send_telegram(digest)
+
         print(f"Logged {len(new_entries)} new update(s).")
     else:
         print("No new updates found.")
