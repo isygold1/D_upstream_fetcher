@@ -41,6 +41,22 @@ def save_state(state):
         json.dump(state, f, indent=2)
 
 
+def summarize_body(body, max_len=280):
+    """Strip markdown noise and trim release notes to a readable preview length."""
+    if not body:
+        return "_(no release notes provided)_"
+    text = body.strip()
+    # Strip common markdown noise that reads badly in Telegram
+    for token in ["### ", "## ", "# ", "**", "* ", "- ", "`"]:
+        text = text.replace(token, "")
+    # Collapse excess blank lines
+    lines = [l.strip() for l in text.splitlines() if l.strip()]
+    text = " ".join(lines)
+    if len(text) > max_len:
+        text = text[:max_len].rsplit(" ", 1)[0] + "…"
+    return text
+
+
 def send_telegram(message):
     if not TELEGRAM_BOT_TOKEN or not TELEGRAM_CHAT_ID:
         print("Telegram not configured — skipping notification.")
@@ -105,6 +121,7 @@ def fetch_github_releases(repo, retries=2):
             "title": r.get("name") or r.get("tag_name"),
             "published_at": (r.get("published_at") or "").replace("T", " ").replace("Z", ""),
             "url": r.get("html_url"),
+            "body": r.get("body"),
         })
     return normalized
 
@@ -130,6 +147,7 @@ def fetch_gitlab_releases(repo):
             "title": r.get("name") or r.get("tag_name"),
             "published_at": (r.get("released_at") or "").replace("T", " ").replace("Z", ""),
             "url": web_url,
+            "body": r.get("description"),
         })
     return normalized
 
@@ -151,8 +169,12 @@ def process_repo(repo, releases, state, new_entries, telegram_messages, platform
     for release in reversed(fresh):
         entry = f"- **{repo}** ({platform_label}) | Tag: `{release['tag']}` | *{release['published_at']}* | [View Release]({release['url']})\n"
         new_entries.append(entry)
+        preview = summarize_body(release.get("body"))
         telegram_messages.append(
-            f"🆕 *{repo}* ({platform_label})\n{release['title']} (`{release['tag']}`)\n{release['url']}"
+            f"🆕 *{repo}* ({platform_label})\n"
+            f"{release['title']} (`{release['tag']}`)\n\n"
+            f"{preview}\n\n"
+            f"{release['url']}"
         )
         print(f" 🆕 NEW: {repo} {release['tag']}")
 
