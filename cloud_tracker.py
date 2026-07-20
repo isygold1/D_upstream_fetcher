@@ -88,13 +88,15 @@ def llm_takeaway(repo, title, tag, body):
             },
             json={
                 "model": "llama-3.3-70b-versatile",
-                "max_tokens": 100,
+                "max_tokens": 120,
                 "messages": [{
                     "role": "user",
                     "content": (
                         f"Release notes for {repo} {tag} ({title}):\n\n{body[:1500]}\n\n"
-                        "Write a one-line TL;DR the way a developer would jot in a changelog "
-                        "summary — terse, technical, no marketing tone, no markdown. "
+                        "Write a short-to-medium TL;DR (1–2 sentences) a developer would "
+                        "jot in a changelog — clear enough for someone skimming to actually "
+                        "understand what changed and why it matters, without dumbing it down "
+                        "or adding marketing tone. No markdown. "
                         "Only state what the notes actually say — do not infer or add "
                         "anything not present."
                     ),
