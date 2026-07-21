@@ -1,5 +1,7 @@
 # Emulation Dependency Updates Log
 
+- **The412Banner/Bannerlator** (GitHub) | Tag: `2.7.1` | *2026-07-20 23:09:29* | [View Release](https://github.com/The412Banner/Bannerlator/releases/tag/2.7.1)
+
 - **The412Banner/Bannerlator** (GitHub) | Tag: `2.5.2` | *2026-07-10 22:53:27* | [View Release](https://github.com/The412Banner/Bannerlator/releases/tag/2.5.2)
 - **The412Banner/Bannerlator** (GitHub) | Tag: `2.6` | *2026-07-11 23:39:27* | [View Release](https://github.com/The412Banner/Bannerlator/releases/tag/2.6)
 - **The412Banner/Bannerlator** (GitHub) | Tag: `2.6.1` | *2026-07-13 11:00:44* | [View Release](https://github.com/The412Banner/Bannerlator/releases/tag/2.6.1)
