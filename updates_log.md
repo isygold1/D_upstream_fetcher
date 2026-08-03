@@ -1,5 +1,7 @@
 # Emulation Dependency Updates Log
 
+- **netborg-afps/dxvk-low-latency** (GitHub) | Tag: `low-latency-framepacing-3.0.2` | *2026-08-03 19:23:35* | [View Release](https://github.com/netborg-afps/dxvk-low-latency/releases/tag/low-latency-framepacing-3.0.2)
+
 - **The412Banner/Bannerlator** (GitHub) | Tag: `2.9.3` | *2026-08-02 19:15:49* | [View Release](https://github.com/The412Banner/Bannerlator/releases/tag/2.9.3)
 
 - **Digger1955/dxvk-gplall** (GitHub) | Tag: `DXVK-GPLALL-2.6.6-1` | *2026-04-16 09:46:10* | [View Release](https://github.com/Digger1955/dxvk-gplall/releases/tag/DXVK-GPLALL-2.6.6-1)
