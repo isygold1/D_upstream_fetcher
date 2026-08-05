@@ -1,5 +1,7 @@
 # Emulation Dependency Updates Log
 
+- **isygold/vegas-releases** (GitHub) | Tag: `v2.4.1-3137660` | *2026-08-05 11:53:54* | [View Release](https://github.com/isygold/vegas-releases/releases/tag/v2.4.1-3137660)
+
 - **The412Banner/Bannerlator** (GitHub) | Tag: `2.9.5` | *2026-08-05 00:00:39* | [View Release](https://github.com/The412Banner/Bannerlator/releases/tag/2.9.5)
 
 - **The412Banner/Bannerlator** (GitHub) | Tag: `2.9.4` | *2026-08-04 00:01:50* | [View Release](https://github.com/The412Banner/Bannerlator/releases/tag/2.9.4)
