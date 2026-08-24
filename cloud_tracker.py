@@ -90,7 +90,7 @@ def llm_takeaway(repo, title, tag, body):
                 "Content-Type": "application/json",
             },
             json={
-                "model": "openai/gpt-oss-120b",
+                "model": "openai/gpt-oss-20b",
                 "max_tokens": 120,
                 "messages": [{
                     "role": "user",
