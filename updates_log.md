@@ -1,5 +1,7 @@
 # Emulation Dependency Updates Log
 
+- **The412Banner/Bannerlator** (GitHub) | Tag: `3.0.2` | *2026-08-30 06:16:28* | [View Release](https://github.com/The412Banner/Bannerlator/releases/tag/3.0.2)
+
 - **doitsujin/dxvk** (GitHub) | Tag: `v3.1` | *2026-08-28 16:23:29* | [View Release](https://github.com/doitsujin/dxvk/releases/tag/v3.1)
 
 - **The412Banner/Bannerlator** (GitHub) | Tag: `3.0.1` | *2026-08-25 16:12:29* | [View Release](https://github.com/The412Banner/Bannerlator/releases/tag/3.0.1)
