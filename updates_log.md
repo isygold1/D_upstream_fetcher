@@ -4,6 +4,12 @@
 - **The412Banner/Bannerlator** (GitHub) | Tag: `3.0.9` | *2026-09-09 23:51:30* | [View Release](https://github.com/The412Banner/Bannerlator/releases/tag/3.0.9)
 - **The412Banner/Bannerlator** (GitHub) | Tag: `3.1.0` | *2026-09-11 01:12:52* | [View Release](https://github.com/The412Banner/Bannerlator/releases/tag/3.1.0)
 - **The412Banner/Bannerlator** (GitHub) | Tag: `3.1.1` | *2026-09-12 20:29:51* | [View Release](https://github.com/The412Banner/Bannerlator/releases/tag/3.1.1)
+- **The412Banner/Bannerlator** (GitHub) | Tag: `3.1.2-wayland-pre7` | *2026-09-14 16:35:26* | [View Release](https://github.com/The412Banner/Bannerlator/releases/tag/3.1.2-wayland-pre7)
+
+- **The412Banner/Bannerlator** (GitHub) | Tag: `3.0.8` | *2026-09-08 01:59:04* | [View Release](https://github.com/The412Banner/Bannerlator/releases/tag/3.0.8)
+- **The412Banner/Bannerlator** (GitHub) | Tag: `3.0.9` | *2026-09-09 23:51:30* | [View Release](https://github.com/The412Banner/Bannerlator/releases/tag/3.0.9)
+- **The412Banner/Bannerlator** (GitHub) | Tag: `3.1.0` | *2026-09-11 01:12:52* | [View Release](https://github.com/The412Banner/Bannerlator/releases/tag/3.1.0)
+- **The412Banner/Bannerlator** (GitHub) | Tag: `3.1.1` | *2026-09-12 20:29:51* | [View Release](https://github.com/The412Banner/Bannerlator/releases/tag/3.1.1)
 - **The412Banner/Bannerlator** (GitHub) | Tag: `3.1.2-wayland-pre6` | *2026-09-14 05:25:02* | [View Release](https://github.com/The412Banner/Bannerlator/releases/tag/3.1.2-wayland-pre6)
 
 - **The412Banner/Bannerlator** (GitHub) | Tag: `3.0.8` | *2026-09-08 01:59:04* | [View Release](https://github.com/The412Banner/Bannerlator/releases/tag/3.0.8)
