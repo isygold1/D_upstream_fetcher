@@ -1,5 +1,7 @@
 # Emulation Dependency Updates Log
 
+- **The412Banner/Bannerlator** (GitHub) | Tag: `3.1.2-wayland-pre9` | *2026-09-16 12:28:07* | [View Release](https://github.com/The412Banner/Bannerlator/releases/tag/3.1.2-wayland-pre9)
+
 - **doitsujin/dxvk** (GitHub) | Tag: `v3.1.1` | *2026-09-15 17:43:25* | [View Release](https://github.com/doitsujin/dxvk/releases/tag/v3.1.1)
 
 - **The412Banner/Bannerlator** (GitHub) | Tag: `3.0.8` | *2026-09-08 01:59:04* | [View Release](https://github.com/The412Banner/Bannerlator/releases/tag/3.0.8)
