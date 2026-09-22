@@ -1,5 +1,7 @@
 # Emulation Dependency Updates Log
 
+- **The412Banner/Bannerlator** (GitHub) | Tag: `3.1.3-pre1` | *2026-09-22 17:46:58* | [View Release](https://github.com/The412Banner/Bannerlator/releases/tag/3.1.3-pre1)
+
 - **Ph42oN/dxvk-gplasync** (GitLab) | Tag: `v3.1.1-1` | *2026-09-19 07:30:22.000* | [View Release](https://gitlab.com/Ph42oN/dxvk-gplasync/-/releases/v3.1.1-1)
 
 - **The412Banner/Bannerlator** (GitHub) | Tag: `3.1.2` | *2026-09-18 11:56:16* | [View Release](https://github.com/The412Banner/Bannerlator/releases/tag/3.1.2)
