@@ -1,5 +1,7 @@
 # Emulation Dependency Updates Log
 
+- **The412Banner/Bannerlator** (GitHub) | Tag: `3.1.3-pre2` | *2026-09-23 11:29:22* | [View Release](https://github.com/The412Banner/Bannerlator/releases/tag/3.1.3-pre2)
+
 - **netborg-afps/dxvk-low-latency** (GitHub) | Tag: `low-latency-framepacing-3.1.1` | *2026-09-23 10:31:30* | [View Release](https://github.com/netborg-afps/dxvk-low-latency/releases/tag/low-latency-framepacing-3.1.1)
 
 - **The412Banner/Bannerlator** (GitHub) | Tag: `3.1.3-pre1` | *2026-09-22 17:46:58* | [View Release](https://github.com/The412Banner/Bannerlator/releases/tag/3.1.3-pre1)
