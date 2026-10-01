@@ -1,5 +1,7 @@
 # Emulation Dependency Updates Log
 
+- **The412Banner/Bannerlator** (GitHub) | Tag: `3.1.4-pre2` | *2026-10-01 12:06:58* | [View Release](https://github.com/The412Banner/Bannerlator/releases/tag/3.1.4-pre2)
+
 - **The412Banner/Bannerlator** (GitHub) | Tag: `3.1.4-pre1` | *2026-09-29 17:13:05* | [View Release](https://github.com/The412Banner/Bannerlator/releases/tag/3.1.4-pre1)
 
 - **The412Banner/Bannerlator** (GitHub) | Tag: `3.1.3` | *2026-09-28 15:13:47* | [View Release](https://github.com/The412Banner/Bannerlator/releases/tag/3.1.3)
