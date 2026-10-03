@@ -1,5 +1,7 @@
 # Emulation Dependency Updates Log
 
+- **The412Banner/Bannerlator** (GitHub) | Tag: `fex-2609-r3` | *2026-10-03 05:03:56* | [View Release](https://github.com/The412Banner/Bannerlator/releases/tag/fex-2609-r3)
+
 - **The412Banner/Bannerlator** (GitHub) | Tag: `3.1.4` | *2026-10-01 15:33:02* | [View Release](https://github.com/The412Banner/Bannerlator/releases/tag/3.1.4)
 
 - **The412Banner/Bannerlator** (GitHub) | Tag: `3.1.4-pre2` | *2026-10-01 12:06:58* | [View Release](https://github.com/The412Banner/Bannerlator/releases/tag/3.1.4-pre2)
