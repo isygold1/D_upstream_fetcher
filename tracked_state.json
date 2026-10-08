@@ -1,9 +1,9 @@
 {
   "doitsujin/dxvk": "v3.1.1",
   "isygold/vegas-releases": "v2.4.1-3137660",
-  "The412Banner/Bannerlator": "3.1.6-pre2",
+  "The412Banner/Bannerlator": "3.1.6-pre3",
   "Ph42oN/dxvk-gplasync": "v3.1.1-1",
   "Digger1955/dxvk-gplall": "DXVK-GPLALL-2.6.8-2",
   "netborg-afps/dxvk-low-latency": "low-latency-framepacing-3.1.1",
-  "pythonlover02/DXVK-Sarek": "v1.13.0"
+  "pythonlover02/DXVK-Sarek": "v1.14.0"
 }

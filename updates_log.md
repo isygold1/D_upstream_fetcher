@@ -1,5 +1,8 @@
 # Emulation Dependency Updates Log
 
+- **The412Banner/Bannerlator** (GitHub) | Tag: `3.1.6-pre3` | *2026-10-08 03:54:54* | [View Release](https://github.com/The412Banner/Bannerlator/releases/tag/3.1.6-pre3)
+- **pythonlover02/DXVK-Sarek** (GitHub) | Tag: `v1.14.0` | *2026-10-08 06:16:51* | [View Release](https://github.com/pythonlover02/dxvk-sarek/releases/tag/v1.14.0)
+
 - **The412Banner/Bannerlator** (GitHub) | Tag: `3.1.6-pre2` | *2026-10-05 09:14:55* | [View Release](https://github.com/The412Banner/Bannerlator/releases/tag/3.1.6-pre2)
 
 - **The412Banner/Bannerlator** (GitHub) | Tag: `3.1.6-pre1` | *2026-10-04 22:57:09* | [View Release](https://github.com/The412Banner/Bannerlator/releases/tag/3.1.6-pre1)
