@@ -1,5 +1,7 @@
 # Emulation Dependency Updates Log
 
+- **pythonlover02/DXVK-Sarek** (GitHub) | Tag: `v1.14.1` | *2026-10-12 01:54:51* | [View Release](https://github.com/pythonlover02/dxvk-sarek/releases/tag/v1.14.1)
+
 - **The412Banner/Bannerlator** (GitHub) | Tag: `3.1.6` | *2026-10-11 06:35:54* | [View Release](https://github.com/The412Banner/Bannerlator/releases/tag/3.1.6)
 
 - **The412Banner/Bannerlator** (GitHub) | Tag: `3.1.6-pre3` | *2026-10-08 03:54:54* | [View Release](https://github.com/The412Banner/Bannerlator/releases/tag/3.1.6-pre3)
