@@ -1,5 +1,7 @@
 # Emulation Dependency Updates Log
 
+- **The412Banner/Bannerlator** (GitHub) | Tag: `3.1.8` | *2026-10-30 23:03:11* | [View Release](https://github.com/The412Banner/Bannerlator/releases/tag/3.1.8)
+
 - **The412Banner/Bannerlator** (GitHub) | Tag: `3.1.7` | *2026-10-27 09:01:07* | [View Release](https://github.com/The412Banner/Bannerlator/releases/tag/3.1.7)
 
 - **Digger1955/dxvk-gplall** (GitHub) | Tag: `DXVK-GPLALL-2.6.9-1` | *2026-10-23 23:51:59* | [View Release](https://github.com/Digger1955/dxvk-gplall/releases/tag/DXVK-GPLALL-2.6.9-1)
